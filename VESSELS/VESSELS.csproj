@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{027A4025-467E-40F9-AEE2-92DBB85A6BF4}</ProjectGuid>
+    <ProjectTypeGuids>{6D335F3A-9D43-41b4-9D22-F6F17C4BE596};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VESSELS</RootNamespace>
+    <AssemblyName>VESSELS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <XnaFrameworkVersion>v4.0</XnaFrameworkVersion>
+    <XnaPlatform>Windows</XnaPlatform>
+    <XnaProfile>HiDef</XnaProfile>
+    <XnaCrossPlatformGroupID>3d6a576a-82f6-48ae-8e53-97a33e99d8ac</XnaCrossPlatformGroupID>
+    <XnaOutputType>Game</XnaOutputType>
+    <ApplicationIcon>Game.ico</ApplicationIcon>
+    <Thumbnail>GameThumbnail.png</Thumbnail>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\x86\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PlatformTarget>x86</PlatformTarget>
+    <XnaCompressContent>false</XnaCompressContent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\x86\Release</OutputPath>
+    <DefineConstants>TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PlatformTarget>x86</PlatformTarget>
+    <XnaCompressContent>true</XnaCompressContent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.GamerServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="MjpegProcessorXna4, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\x86\Release\MjpegProcessorXna4.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Device" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Net" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Android App Logic\AndroidAppCore.cs" />
+    <Compile Include="Android App Logic\AndroidAppCoreSquare.cs" />
+    <Compile Include="BCI Logic\BCI2000comm.cs" />
+    <Compile Include="BCI Logic\BCI2000_Control\AnyApp\Advanced2Class.cs" />
+    <Compile Include="BCI Logic\BCI2000_Control\AnyApp\AdvancedControl.cs" />
+    <Compile Include="BCI Logic\BCI2000_Control\AnyApp\BasicControl.cs" />
+    <Compile Include="BCI Logic\BCI2000_Control\BCI2000commSOCI.cs" />
+    <Compile Include="BCI Logic\BCI2000_Control\SpecificApp\AdvancedControl.cs" />
+    <Compile Include="BCI Logic\BCI2000_Control\SpecificApp\BasicControl.cs" />
+    <Compile Include="BCI Logic\BCI2000_Control\SpecificApp\CursorControl.cs" />
+    <Compile Include="BCI Logic\BCI2000_Control\SpecificApp\WowControl.cs" />
+    <Compile Include="BCI Logic\checkerSSVEP.cs" />
+    <Compile Include="BCI Logic\Device_Emulation\InterceptKeys.cs" />
+    <Compile Include="BCI Logic\Device_Emulation\SendTargetedKey.cs" />
+    <Compile Include="BCI Logic\Device_Emulation\VirtualKeyboard.cs" />
+    <Compile Include="BCI Logic\Device_Emulation\WowHelper.cs" />
+    <Compile Include="BCI Logic\RingStimulator.cs" />
+    <Compile Include="BCI Logic\SSVEP.cs" />
+    <Compile Include="BCI Logic\SSVEPcb.cs" />
+    <Compile Include="BCI Logic\tightSSVEP.cs" />
+    <Compile Include="Bing Maps Logic\BingMapsTiles.cs" />
+    <Compile Include="Bing Maps Logic\BingMapsViewer.cs" />
+    <Compile Include="Bing Maps Logic\MapsCore.cs" />
+    <Compile Include="Bing Maps Logic\TileInformation.cs" />
+    <Compile Include="Bing Maps Logic\TileSystem.cs" />
+    <Compile Include="City3D Logic\Avatar.cs" />
+    <Compile Include="City3D Logic\Ground.cs" />
+    <Compile Include="City3D Logic\StaticEnvironment.cs" />
+    <Compile Include="Component System\DrawableGameComponent2.cs" />
+    <Compile Include="Component System\GameComponent2.cs" />
+    <Compile Include="Component System\GameComponentCollection.cs" />
+    <Compile Include="Component System\GameComponentCollectionEventArgs.cs" />
+    <Compile Include="Component System\IDrawable.cs" />
+    <Compile Include="Component System\IGameComponent.cs" />
+    <Compile Include="Component System\IUpdateable.cs" />
+    <Compile Include="core\Game1.cs" />
+    <Compile Include="core\Program.cs" />
+    <Compile Include="core\User32.cs" />
+    <Compile Include="MazeGame Logic\Animation.cs" />
+    <Compile Include="MazeGame Logic\AnimationPlayer.cs" />
+    <Compile Include="MazeGame Logic\Circle.cs" />
+    <Compile Include="MazeGame Logic\Enemy.cs" />
+    <Compile Include="MazeGame Logic\GameCore.cs" />
+    <Compile Include="MazeGame Logic\Gem.cs" />
+    <Compile Include="MazeGame Logic\Level.cs" />
+    <Compile Include="MazeGame Logic\Player.cs" />
+    <Compile Include="MazeGame Logic\RectangleExtensions.cs" />
+    <Compile Include="MazeGame Logic\Tile.cs" />
+    <Compile Include="PracticeLogic\PracticeCore.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ring Logic\RingAppCore.cs" />
+    <Compile Include="ScreenManager\GameScreen.cs" />
+    <Compile Include="ScreenManager\InputState.cs" />
+    <Compile Include="ScreenManager\ScreenManager.cs" />
+    <Compile Include="Screens\BackgroundScreen.cs" />
+    <Compile Include="Screens\GameScreens\AndroidAppScreen.cs" />
+    <Compile Include="Screens\GameScreens\BingMapsScreen.cs" />
+    <Compile Include="Screens\GameScreens\City3DGamePlayScreen.cs" />
+    <Compile Include="Screens\GameScreens\MazeGamePlayScreen.cs" />
+    <Compile Include="Screens\GameScreens\PracticeScreen.cs" />
+    <Compile Include="Screens\GameScreens\RingAppGameScreen.cs" />
+    <Compile Include="Screens\GameScreens\SOCIScreen.cs" />
+    <Compile Include="Screens\LoadingScreen.cs" />
+    <Compile Include="Screens\MainMenuScreen.cs" />
+    <Compile Include="Screens\MenuEntry.cs" />
+    <Compile Include="Screens\MenuScreen.cs" />
+    <Compile Include="Screens\MessageBoxScreen.cs" />
+    <Compile Include="Screens\OptionsMenuScreen.cs" />
+    <Compile Include="Screens\PacManOptionsScreen.cs" />
+    <Compile Include="Screens\PauseMenuScreen.cs" />
+    <Compile Include="Screens\PlayerIndexEventArgs.cs" />
+    <Compile Include="SOCI\DirectX_Overlay\DirectX_Shape_Helper.cs" />
+    <Compile Include="SOCI\DirectX_Overlay\DXGDI_Interface.cs" />
+    <Compile Include="SOCI\DirectX_Overlay\SSVEP\SSVEP_DirectX.cs" />
+    <Compile Include="SOCI\DirectX_Overlay\SSVEP\SSVEP_DirectX2.cs" />
+    <Compile Include="SOCI\DirectX_Overlay\SSVEP\SSVEP_DirectX_Advanced.cs" />
+    <Compile Include="SOCI\DirectX_Overlay\SSVEP\SSVEP_DirectX_Advanced_V2.cs" />
+    <Compile Include="SOCI\DirectX_Overlay\SSVEP\SSVEP_DirectX_Advanced_V2b.cs" />
+    <Compile Include="SOCI\GDI+_Overlay\SSVEPadvancedGDI.cs" />
+    <Compile Include="SOCI\GDI+_Overlay\SSVEPbasicGDI.cs" />
+    <Compile Include="SOCI\GDI+_Overlay\SSVEP_GDI.cs" />
+    <Compile Include="SOCI\GDI+_Overlay\StimuliShapes_GDI.cs" />
+    <Compile Include="SOCI\Stimulator_GDI+\SSVEPadvancedGDI.cs" />
+    <Compile Include="SOCI\Stimulator_GDI+\SSVEPbasicGDI.cs" />
+    <Compile Include="SOCI\Stimulator_GDI+\SSVEP_GDI.cs" />
+    <Compile Include="SOCI\Stimulator_GDI+\StimuliShapes_GDI.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Game.ico" />
+    <Content Include="GameThumbnail.png">
+      <XnaPlatformSpecific>true</XnaPlatformSpecific>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VESSELSContent\VESSELSContent.contentproj">
+      <Name>VESSELSContent</Name>
+      <XnaReferenceType>Content</XnaReferenceType>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
+  <!--
+      To modify your build process, add your task inside one of the targets below and uncomment it. 
+      Other similar extension points exist, see Microsoft.Common.targets.
+      <Target Name="BeforeBuild">
+      </Target>
+      <Target Name="AfterBuild">
+      </Target>
+    -->
+</Project>
