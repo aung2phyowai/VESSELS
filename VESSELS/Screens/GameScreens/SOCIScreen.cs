@@ -142,7 +142,7 @@ namespace VESSELS
         /// </summary>
         public override void Draw(GameTime gameTime)
         {
-            ScreenManager.GraphicsDevice.Clear(Color.Transparent);
+            ScreenManager.GraphicsDevice.Clear(Color.Gray);
             // If the game is transitioning on or off, fade it out to black.
             if (TransitionPosition > 0 || pauseAlpha > 0)
             {

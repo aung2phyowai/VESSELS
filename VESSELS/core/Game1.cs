@@ -67,7 +67,7 @@ namespace VESSELS
             graphics.PreferredBackBufferWidth = screenManager.smallWidth;
             //graphics.PreferredBackBufferHeight = screenManager.maxHeight;
             //graphics.PreferredBackBufferWidth = screenManager.maxWidth;
-            //GraphicsDevice.PresentationParameters.PresentationInterval = PresentInterval.One;
+            GraphicsDevice.PresentationParameters.PresentationInterval = PresentInterval.One;
             graphics.PreferMultiSampling = false;
             graphics.ApplyChanges();
 
@@ -81,11 +81,10 @@ namespace VESSELS
             screenManager.form = form;
             form.Visible = true;
             form.AllowTransparency = true;
+            form.BackColor = System.Drawing.Color.Gray;
+            form.TransparencyKey = System.Drawing.Color.Gray;
             form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
-            //form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             form.WindowState = System.Windows.Forms.FormWindowState.Normal;
-            //form.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            //form.TransparencyKey = form.BackColor;
             form.TopMost = true;
             //form.DesktopLocation = new System.Drawing.Point(0, 0);
             //form.ClientSize = new System.Drawing.Size(GraphicsDevice.DisplayMode.Width, GraphicsDevice.DisplayMode.Height);
@@ -119,9 +118,8 @@ namespace VESSELS
         //Draw
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(new Color(0,0,0,0.3f));
-            //GraphicsDevice.Clear(Color.Black);
-            //GraphicsDevice.Clear(Color.Transparent);
+            //GraphicsDevice.Clear(new Color(0,0,0,0.3f));
+            GraphicsDevice.Clear(Color.Gray);
             base.Draw(gameTime);
         }
     }

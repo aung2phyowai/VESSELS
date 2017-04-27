@@ -182,8 +182,8 @@ namespace VESSELS
             ScreenManager.form.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 
             //Adjust directx graphics engine for full-screen mode
-            ScreenManager.form.AllowTransparency = false;
-            ScreenManager.form.TransparencyKey = ScreenManager.form.BackColor;
+            ScreenManager.form.AllowTransparency = true;
+            ScreenManager.form.TransparencyKey = System.Drawing.Color.Gray;
             ScreenManager.graphics.PreferredBackBufferHeight = ScreenManager.maxHeight;
             ScreenManager.graphics.PreferredBackBufferWidth = ScreenManager.maxWidth;
             ScreenManager.graphics.ApplyChanges();
