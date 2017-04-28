@@ -18,6 +18,8 @@ namespace VESSELS
         GraphicsDeviceManager graphics;
         ScreenManager screenManager;
         public System.Windows.Forms.Form form;
+        public Color back_color = Color.Gray;
+
 
         //Constructor
         public Game1()
@@ -32,7 +34,6 @@ namespace VESSELS
             Components.Add(screenManager);
             IsMouseVisible = true;
             // Activate the first screens.
-            //screenManager.AddScreen(new BackgroundScreen(), null);
             screenManager.AddScreen(new MainMenuScreen(), null);
             // keep a fixed time step of 60hz
             IsFixedTimeStep = true;
@@ -65,31 +66,34 @@ namespace VESSELS
             graphics.GraphicsDevice.DepthStencilState = DepthStencilState.None;
             graphics.PreferredBackBufferHeight = screenManager.smallHeight;
             graphics.PreferredBackBufferWidth = screenManager.smallWidth;
-            //graphics.PreferredBackBufferHeight = screenManager.maxHeight;
-            //graphics.PreferredBackBufferWidth = screenManager.maxWidth;
             GraphicsDevice.PresentationParameters.PresentationInterval = PresentInterval.One;
             graphics.PreferMultiSampling = false;
             graphics.ApplyChanges();
 
-            //int[] margins = new int[] { 0, 0, graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight };
-            //int[] margins = new int[] { 0, 0, screenManager.smallWidth, screenManager.smallHeight};
-            //int[] margins = new int[] { 0, 0, screenManager.maxWidth, screenManager.maxHeight };
+            
             int[] margins = new int[] { -1, -1, -1, -1 };
             User32.DwmExtendFrameIntoClientArea(Window.Handle, ref margins);
-
             form = System.Windows.Forms.Control.FromHandle(Window.Handle).FindForm();
             screenManager.form = form;
             form.Visible = true;
             form.AllowTransparency = true;
-            form.BackColor = System.Drawing.Color.Gray;
-            form.TransparencyKey = System.Drawing.Color.Gray;
+
+            // set parameters based on windows version
+            if (Globals.OS_VERSION.Minor == 2) //Windows 10
+            {
+                back_color = Color.Gray;
+                form.BackColor = System.Drawing.Color.Gray;
+                form.TransparencyKey = System.Drawing.Color.Gray;
+            }
+            else                              //Windows 7
+            {
+                back_color = new Color(0, 0, 0, 0.3f);
+            }
+
             form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
             form.WindowState = System.Windows.Forms.FormWindowState.Normal;
             form.TopMost = true;
-            //form.DesktopLocation = new System.Drawing.Point(0, 0);
-            //form.ClientSize = new System.Drawing.Size(GraphicsDevice.DisplayMode.Width, GraphicsDevice.DisplayMode.Height);
             form.ClientSize = new System.Drawing.Size(screenManager.smallWidth, screenManager.smallHeight);
-            //form.ClientSize = new System.Drawing.Size(screenManager.maxWidth, screenManager.maxHeight);
            
             base.Initialize();
         }
@@ -119,7 +123,7 @@ namespace VESSELS
         protected override void Draw(GameTime gameTime)
         {
             //GraphicsDevice.Clear(new Color(0,0,0,0.3f));
-            GraphicsDevice.Clear(Color.Gray);
+            GraphicsDevice.Clear(back_color);
             base.Draw(gameTime);
         }
     }

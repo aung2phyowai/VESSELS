@@ -238,6 +238,7 @@ namespace VESSELS.PracticeLogic
          //Draw Game
         public override void Draw(TimeSpan elapsedTime, TimeSpan totalTime)
         {
+            screenManager.GraphicsDevice.Clear(Color.Transparent);
             spriteBatch.Begin();
 
             if (feedBackLeft > 0)

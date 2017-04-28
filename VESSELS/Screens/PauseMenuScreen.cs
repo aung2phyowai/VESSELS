@@ -82,7 +82,10 @@ namespace VESSELS
             ScreenManager.form.WindowState = System.Windows.Forms.FormWindowState.Normal;
 
             //Adjust directx graphics engine for normal-screen mode
-            ScreenManager.form.AllowTransparency = true;
+            if(Globals.OS_VERSION.Minor==2)
+                ScreenManager.form.AllowTransparency = true;
+            else
+                ScreenManager.form.AllowTransparency = false;
             ScreenManager.graphics.PreferredBackBufferHeight = ScreenManager.smallHeight;
             ScreenManager.graphics.PreferredBackBufferWidth = ScreenManager.smallWidth;
             ScreenManager.graphics.ApplyChanges();
