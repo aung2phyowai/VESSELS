@@ -5,7 +5,7 @@
     <ProjectTypeGuids>{6D335F3A-9D43-41b4-9D22-F6F17C4BE596};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>VESSELS</RootNamespace>
     <AssemblyName>VESSELS</AssemblyName>
@@ -59,6 +59,9 @@
     <PlatformTarget>x86</PlatformTarget>
     <XnaCompressContent>true</XnaCompressContent>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
@@ -85,6 +88,7 @@
     <Compile Include="BCI Logic\BCI2000_Control\AnyApp\Advanced2Class.cs" />
     <Compile Include="BCI Logic\BCI2000_Control\AnyApp\AdvancedControl.cs" />
     <Compile Include="BCI Logic\BCI2000_Control\AnyApp\BasicControl.cs" />
+    <Compile Include="BCI Logic\BCI2000_Control\AnyApp\WowControl.cs" />
     <Compile Include="BCI Logic\BCI2000_Control\BCI2000commSOCI.cs" />
     <Compile Include="BCI Logic\BCI2000_Control\SpecificApp\AdvancedControl.cs" />
     <Compile Include="BCI Logic\BCI2000_Control\SpecificApp\BasicControl.cs" />
@@ -95,6 +99,8 @@
     <Compile Include="BCI Logic\Device_Emulation\SendTargetedKey.cs" />
     <Compile Include="BCI Logic\Device_Emulation\VirtualKeyboard.cs" />
     <Compile Include="BCI Logic\Device_Emulation\WowHelper.cs" />
+    <Compile Include="BCI Logic\LSL\LSL.cs" />
+    <Compile Include="BCI Logic\LSL\LSLcommSOCI.cs" />
     <Compile Include="BCI Logic\RingStimulator.cs" />
     <Compile Include="BCI Logic\SSVEP.cs" />
     <Compile Include="BCI Logic\SSVEPcb.cs" />

@@ -92,7 +92,7 @@ namespace VESSELS
 
             form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
             form.WindowState = System.Windows.Forms.FormWindowState.Normal;
-            form.TopMost = true;
+            //form.TopMost = true;
             form.ClientSize = new System.Drawing.Size(screenManager.smallWidth, screenManager.smallHeight);
            
             base.Initialize();

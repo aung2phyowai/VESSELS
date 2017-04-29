@@ -8,7 +8,7 @@ using VESSELS.BCI_Logic.Device_Emulation;
 
 namespace VESSELS.BCI_Logic.BCI2000_Control.SpecificApp
 {
-    class SpecificAppControl : BCI2000commSOCI
+    class SpecificAppControl : LSLcommSOCI
     {
         //Keyboard control vars
         SendTargetedKey sendTargetkey;

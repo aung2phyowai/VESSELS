@@ -6,30 +6,25 @@ using Microsoft.Xna.Framework;
 using System.Windows.Forms;
 using VESSELS.BCI_Logic.Device_Emulation;
 
-namespace VESSELS.BCI_Logic.BCI2000_Control.SpecificApp
+namespace VESSELS.BCI_Logic.BCI2000_Control.AnyApp
 {
     class WowControl : LSLcommSOCI
     {
         //Keyboard control vars
-        SendTargetedKey sendTargetkey;
         int keyDownCntr = 5;
         bool turnKeyIsDown = false;
-
-        //Name of application to control
-        string appName;
-
+        
         //Constructor
-        public WowControl(Game game, string appName)
+        public WowControl(Game game)
             :base(game)
         {
-            this.appName = appName;
         }
 
         //Initialize. 
         public override void Initialize()
         {
             //create new targeted keyStroke with name of application to control
-            sendTargetkey=new SendTargetedKey(appName);
+            
             base.Initialize();
         }
 
@@ -42,8 +37,8 @@ namespace VESSELS.BCI_Logic.BCI2000_Control.SpecificApp
 
                 if (keyDownCntr == 0)
                 {
-                    sendTargetkey.SendKeyUp((int)Keys.Right);
-                    sendTargetkey.SendKeyUp((int)Keys.Left);
+                    VirtualKeyboard.ReleaseKey(Keys.Left);
+                    VirtualKeyboard.ReleaseKey(Keys.Right);
                     keyDownCntr = 5;
                     turnKeyIsDown = false;
                 }
@@ -60,29 +55,29 @@ namespace VESSELS.BCI_Logic.BCI2000_Control.SpecificApp
                     case 0:     //Do Nothing
                         break;
                     case 1:     //Up arrow (move forward/up)
-                        sendTargetkey.SendKeyDown((int)Keys.Up);
+                        VirtualKeyboard.HoldKey(Keys.Up);
                         break;
                     case 2:     //Down arrow (move backward/down)
-                        sendTargetkey.SendKeyUp((int)Keys.Up);
-                        sendTargetkey.SendKeyDown((int)Keys.D1);
-                        sendTargetkey.SendKeyUp((int)Keys.D1);
-                        sendTargetkey.SendKeyDown((int)Keys.D1);
-                        sendTargetkey.SendKeyUp((int)Keys.D1);
+                        //sendTargetkey.SendKeyUp((int)Keys.Up);
+                        //sendTargetkey.SendKeyDown((int)Keys.D1);
+                        //sendTargetkey.SendKeyUp((int)Keys.D1);
+                        //sendTargetkey.SendKeyDown((int)Keys.D1);
+                        //sendTargetkey.SendKeyUp((int)Keys.D1);
 
                         
-                        sendTargetkey.SendKeyDown((int)Keys.D2);
-                        sendTargetkey.SendKeyUp((int)Keys.D2);
-                        sendTargetkey.SendKeyDown((int)Keys.D2);
-                        sendTargetkey.SendKeyUp((int)Keys.D2);
+                        //sendTargetkey.SendKeyDown((int)Keys.D2);
+                        //sendTargetkey.SendKeyUp((int)Keys.D2);
+                        //sendTargetkey.SendKeyDown((int)Keys.D2);
+                        //sendTargetkey.SendKeyUp((int)Keys.D2);
                         break;
                     case 3:     //Right arrow (move right)
-                        sendTargetkey.SendKeyUp((int)Keys.Up);
-                        sendTargetkey.SendKeyDown((int)Keys.Right);
+                        VirtualKeyboard.ReleaseKey(Keys.Up);
+                        VirtualKeyboard.HoldKey(Keys.Right);
                         turnKeyIsDown = true;
                         break;
                     case 4:     //Left  arrow (move left)
-                        sendTargetkey.SendKeyUp((int)Keys.Up);
-                        sendTargetkey.SendKeyDown((int)Keys.Left);
+                        VirtualKeyboard.ReleaseKey(Keys.Up);
+                        VirtualKeyboard.HoldKey(Keys.Left);
                         turnKeyIsDown = true;
                         break;
                 }

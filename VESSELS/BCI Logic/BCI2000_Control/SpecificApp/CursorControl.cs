@@ -8,7 +8,7 @@ using VESSELS.BCI_Logic.Device_Emulation;
 
 namespace VESSELS.BCI_Logic.BCI2000_Control.SpecificApp
 {
-    class CursorControl : BCI2000commSOCI
+    class CursorControl : LSLcommSOCI
     {
         //Current mouse position
         MOUSEPOINT mousePos;

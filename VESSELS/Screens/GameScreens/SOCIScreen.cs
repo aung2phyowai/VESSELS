@@ -10,7 +10,7 @@ using VESSELS.SOCI.DirectX_Overlay;
 using VESSELS.SOCI.GDI_Overlay;
 using System.Runtime.InteropServices;
 using VESSELS.BCI_Logic.Device_Emulation;
-using VESSELS.BCI_Logic.BCI2000_Control.SpecificApp;
+using VESSELS.BCI_Logic.BCI2000_Control.AnyApp;
 
 namespace VESSELS
 {
@@ -20,7 +20,7 @@ namespace VESSELS
         #region Fields
 
         //BCI components
-        WowControl wowBCIcontrol;
+        WowControl bciControl;
         SSVEP_DirectX_Advanced_V2 ssvepDX;
 
         //Screen alpha
@@ -54,8 +54,8 @@ namespace VESSELS
             //Hook the interceptKeys module
             InterceptKeys.Hook();
 
-            wowBCIcontrol = new WowControl(ScreenManager.Game, "World Of Warcraft");
-            ScreenManager.Game.Components.Add(wowBCIcontrol);
+            bciControl = new WowControl(ScreenManager.Game);
+            ScreenManager.Game.Components.Add(bciControl);
 
             ssvepDX = new SSVEP_DirectX_Advanced_V2(ScreenManager.Game);
             ssvepDX.Initialize(ScreenManager.form, ScreenManager.SpriteBatch);
@@ -65,8 +65,8 @@ namespace VESSELS
         // Release any resources taken up by the components
         public override void UnloadContent()
         {
-            ScreenManager.Game.Components.Remove(wowBCIcontrol);
-            wowBCIcontrol.Dispose();
+            ScreenManager.Game.Components.Remove(bciControl);
+            bciControl.Dispose();
             ScreenManager.Game.Components.Remove(ssvepDX);
             ssvepDX.Dispose();
 

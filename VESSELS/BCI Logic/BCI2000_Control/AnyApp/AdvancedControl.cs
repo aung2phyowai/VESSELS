@@ -8,7 +8,7 @@ using VESSELS.BCI_Logic.Device_Emulation;
 
 namespace VESSELS.BCI_Logic.BCI2000_Control.AnyApp
 {
-    class AdvancedControl : BCI2000commSOCI
+    class AdvancedControl : LSLcommSOCI
     {
         //Constructor
         public AdvancedControl(Game game)
