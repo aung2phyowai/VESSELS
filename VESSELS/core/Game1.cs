@@ -122,7 +122,6 @@ namespace VESSELS
         //Draw
         protected override void Draw(GameTime gameTime)
         {
-            //GraphicsDevice.Clear(new Color(0,0,0,0.3f));
             GraphicsDevice.Clear(back_color);
             base.Draw(gameTime);
         }
