@@ -33,42 +33,42 @@
     <Compile Include="AudioLibrary\ExitReached.wma">
       <Name>ExitReached</Name>
       <Importer>WmaImporter</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="AudioLibrary\GemCollected.wma">
       <Name>GemCollected</Name>
       <Importer>WmaImporter</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="AudioLibrary\MonsterKilled.wma">
       <Name>MonsterKilled</Name>
       <Importer>WmaImporter</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="AudioLibrary\Music.wma">
       <Name>Music</Name>
       <Importer>WmaImporter</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="AudioLibrary\PlayerFall.wma">
       <Name>PlayerFall</Name>
       <Importer>WmaImporter</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="AudioLibrary\PlayerJump.wma">
       <Name>PlayerJump</Name>
       <Importer>WmaImporter</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="AudioLibrary\PlayerKilled.wma">
       <Name>PlayerKilled</Name>
       <Importer>WmaImporter</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
     <Compile Include="AudioLibrary\Powerup.wma">
       <Name>Powerup</Name>
       <Importer>WmaImporter</Importer>
-      <Processor>SongProcessor</Processor>
+      <Processor>SoundEffectProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
