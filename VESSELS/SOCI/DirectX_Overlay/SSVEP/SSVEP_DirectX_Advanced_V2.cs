@@ -52,7 +52,10 @@ namespace VESSELS.SOCI.DirectX_Overlay
             //Initialize Shapes (get bounds and images)
             for (int i = 0; i < 4; i++)
             {
-                stimStruct[i].shape = Shape.Rectangle;
+                if(i==1)
+                    stimStruct[i].shape = Shape.Lightning;
+                else
+                    stimStruct[i].shape = Shape.Arrow;
                 stimStruct[i].type = (Type)i;
                 stimStruct[i].stimScale = 1;
                 stimStruct[i] = shapeHelper.GetShape(stimStruct[i]);
