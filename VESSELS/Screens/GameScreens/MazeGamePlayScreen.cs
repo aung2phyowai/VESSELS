@@ -73,7 +73,8 @@ namespace VESSELS
             }
 
             //Establish BCI2000 comm
-            BCI2000comm bciComm = new BCI2000comm(ScreenManager.Game);
+            LSLcomm bciComm = new LSLcomm(ScreenManager.Game);
+            //BCI2000comm bciComm = new BCI2000comm(ScreenManager.Game);
             bciComm.Initialize();
             components.Add(bciComm);
         }
