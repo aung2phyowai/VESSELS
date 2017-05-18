@@ -111,6 +111,8 @@ namespace VESSELS.MazeGameLogic
             this.game = game;
             this.SCREENHEIGHT = game.GraphicsDevice.DisplayMode.Height;
             this.SCREENWIDTH = game.GraphicsDevice.DisplayMode.Width;
+            this.SCREENHEIGHT = 1200;
+            this.SCREENWIDTH = 1920;
             // Create a new content manager to load content used just by this level.
             content = new ContentManager(serviceProvider, "Content");
 

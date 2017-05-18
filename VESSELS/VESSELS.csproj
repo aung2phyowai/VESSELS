@@ -85,6 +85,7 @@
   <ItemGroup>
     <Compile Include="Android App Logic\AndroidAppCore.cs" />
     <Compile Include="Android App Logic\AndroidAppCoreSquare.cs" />
+    <Compile Include="BCI Logic\LSL\LSLcomm.cs" />
     <Compile Include="BCI Logic\BCI2000comm.cs" />
     <Compile Include="BCI Logic\BCI2000_Control\AnyApp\Advanced2Class.cs" />
     <Compile Include="BCI Logic\BCI2000_Control\AnyApp\AdvancedControl.cs" />

@@ -58,17 +58,8 @@ namespace VESSELS.BCI_Logic.BCI2000_Control.AnyApp
                         VirtualKeyboard.HoldKey(Keys.Up);
                         break;
                     case 2:     //Down arrow (move backward/down)
-                        //sendTargetkey.SendKeyUp((int)Keys.Up);
-                        //sendTargetkey.SendKeyDown((int)Keys.D1);
-                        //sendTargetkey.SendKeyUp((int)Keys.D1);
-                        //sendTargetkey.SendKeyDown((int)Keys.D1);
-                        //sendTargetkey.SendKeyUp((int)Keys.D1);
-
-                        
-                        //sendTargetkey.SendKeyDown((int)Keys.D2);
-                        //sendTargetkey.SendKeyUp((int)Keys.D2);
-                        //sendTargetkey.SendKeyDown((int)Keys.D2);
-                        //sendTargetkey.SendKeyUp((int)Keys.D2);
+                        VirtualKeyboard.ReleaseKey(Keys.Up);
+                        VirtualKeyboard.PressKey(Keys.D1);
                         break;
                     case 3:     //Right arrow (move right)
                         VirtualKeyboard.ReleaseKey(Keys.Up);
