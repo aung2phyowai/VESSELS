@@ -7,6 +7,8 @@ public static class Globals
 {
     public static Version OS_VERSION;
     public static bool APP_RUNNING = true;
+    public static int SCREENWIDTH = 1920;
+    public static int SCREENHEIGHT = 1080;
 }
 
 namespace VESSELS
@@ -37,18 +39,35 @@ namespace VESSELS
                 catch (Exception e) { }
             }
             Globals.OS_VERSION = version;
-			
-			// start main application
-            using (Game1 game = new Game1())
-            {
-                game.Run();
-			}
-			
-			// Below.... doing windows forms stufff.....
-            // Set these for some reason...
+
+            // START APPLICATION USING OLD MENU SYSTEM
+            //using (Game1 game = new Game1())
+            //{
+            //    game.Run();
+            //} 
+            VESSELS_Configuration config = new VESSELS_Configuration();
+
+            
+
+            // START APPLICATION USING WINFORMS GUI SYSTEM
+
+
             Forms.Application.EnableVisualStyles();
             Forms.Application.SetCompatibleTextRenderingDefault(false);
+
+            // for now, just run the gui and game once (no loop)
             MainMenu mainMenu;
+            mainMenu = new MainMenu();
+            Forms.Application.Run(mainMenu);
+
+            if (Globals.APP_RUNNING)
+            {
+                using (Game1 game = new Game1())
+                {
+                    game.Run();
+                }
+            }
+
             /*
             // MAIN APPLICATION LOOP
             while (Globals.APP_RUNNING)
@@ -91,15 +110,13 @@ namespace VESSELS
 
             //Forms.Application.Restart();
 
-           // mainMenu = new MainMenu();
+            // mainMenu = new MainMenu();
             //Forms.Application.Run(mainMenu);
             //mainMenu.ShowDialog();
 
 
             //ac = new Forms.ApplicationContext(mainMenu);
             //Forms.Application.Run(ac);
-
-            
 
         }
     }
