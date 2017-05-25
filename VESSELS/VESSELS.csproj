@@ -122,9 +122,10 @@
     <Compile Include="Component System\IDrawable.cs" />
     <Compile Include="Component System\IGameComponent.cs" />
     <Compile Include="Component System\IUpdateable.cs" />
+    <Compile Include="core\Utilities.cs" />
+    <Compile Include="core\VESSELS_app.cs" />
     <Compile Include="core\Game1.cs" />
     <Compile Include="core\Program.cs" />
-    <Compile Include="core\User32.cs" />
     <Compile Include="MazeGame Logic\Animation.cs" />
     <Compile Include="MazeGame Logic\AnimationPlayer.cs" />
     <Compile Include="MazeGame Logic\Circle.cs" />
